@@ -1,6 +1,8 @@
 #ifndef ELEVATOR_H
 #define ELEVATOR_H
 
+#include <stdlib.h>
+#include <stddef.h>
 #include "person.h"
 
 typedef struct _Elevator {

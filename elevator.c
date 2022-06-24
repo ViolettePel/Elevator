@@ -18,13 +18,31 @@ Building *create_building(int nbFloor, Elevator *elevator, PersonList **waitingL
     res -> waitingLists = waitingLists;
 }
 
-PersonList* exitElevator(Elevator *e);
-PersonList* enterElevator(Elevator *e, PersonList *list);
+PersonList* exitElevator(Elevator *e){
+    PersonList *exit;
+    PersonList *stay;
+    PersonList *p = e -> persons;
+    while(p -> next != NULL){
+        if(p -> person -> dest == e -> currentFloor){
+            PersonList *exit = insert(p -> person,exit);
+            p = p -> next;
+        }
+        else{
+            PersonList *stay = insert(p -> person,exit);
+            p = p -> next;
+        }
+    }      
+    e -> persons = stay;
+    return exit;
+}
+PersonList* enterElevator(Elevator *e, PersonList *list){
+
+}
 
 void stepElevator(Building *b){
     if(b -> elevator -> currentFloor == b -> elevator -> targetFloor){
-        PersonList* exitElevator(Elevator *e);
-        PersonList* enterElevator(Elevator *e, PersonList *waitingList);
+        exitElevator(b -> elevator);
+        enterElevator(b -> elevator, *(b -> waitingLists + b -> elevator -> targetFloor));
     }
     else if (b -> elevator -> currentFloor > b -> elevator -> targetFloor){
         (b -> elevator -> currentFloor)--;
@@ -32,12 +50,4 @@ void stepElevator(Building *b){
     else{
         (b -> elevator -> currentFloor)++;
     }
-}
-
-PersonList* exitElevator(Elevator *e){
-
-}
-
-PersonList* enterElevator(Elevator *e, PersonList *waintingList){
-
 }
