@@ -55,6 +55,19 @@ void DisplayBuilding(WINDOW *win, Building *b) {
   }
 }
 
+void stepElevator(Building *b){
+    if(b -> elevator -> currentFloor == b -> elevator -> targetFloor){
+        PersonList* exitElevator(Elevator *e);
+        PersonList* enterElevator(Elevator *e, PersonList *waitingList);
+    }
+    else if (b -> elevator -> currentFloor > b -> elevator -> targetFloor){
+        (b -> elevator -> currentFloor)--;
+    }
+    else{
+        (b -> elevator -> currentFloor)++;
+    }
+}
+
 
 int main() {
   srand(time(NULL));   // should only be called once
