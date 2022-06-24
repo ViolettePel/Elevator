@@ -1,5 +1,6 @@
 #include <time.h>
 #include <stdlib.h>
+#include <stddef.h>
 #include <ncurses.h>
 
 #include "elevator.h"
