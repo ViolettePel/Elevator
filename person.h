@@ -1,6 +1,8 @@
 #ifndef PERSON_H
 #define PERSON_H
 
+#include <stdlib.h>
+
 typedef struct _Person {
     int src;
     int dest;
