@@ -24,7 +24,7 @@ PersonList* exitElevator(Elevator *e){
     PersonList *exit;
     PersonList *stay;
     PersonList *p = e -> persons;
-    while(p -> next != NULL){
+    while(p != NULL){
         if(p -> person -> dest == e -> currentFloor){
             PersonList *exit = insert(p -> person,exit);
             p = p -> next;

@@ -9,6 +9,15 @@ Person* createPerson(int src, int dest){
     return res;
 }
 
+PersonList* createPersonList(Person *p){
+    PersonList* res = malloc(sizeof(PersonList));
+    
+    res -> person = p;
+    res -> next = NULL;
+
+    return res;
+}
+
 PersonList* insert(Person *p,PersonList *list){
     PersonList* res = malloc(sizeof(PersonList));
 

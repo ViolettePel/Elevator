@@ -2,6 +2,7 @@
 #define PERSON_H
 
 #include <stdlib.h>
+#include <stddef.h>
 
 typedef struct _Person {
     int src;
