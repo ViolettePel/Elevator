@@ -1,7 +1,7 @@
 #include "elevator.h"
 
 Elevator *create_elevator(int capacity, int currentFloor, PersonList *persons){
-    Elevator *res;
+    Elevator *res = malloc(sizeof(Elevator));
 
     res -> capacity = capacity;
     res -> currentFloor = currentFloor;
@@ -11,11 +11,13 @@ Elevator *create_elevator(int capacity, int currentFloor, PersonList *persons){
     return res;
 }
 Building *create_building(int nbFloor, Elevator *elevator, PersonList **waitingLists){
-    Building *res;
+    Building *res = malloc(sizeof(Building));
 
     res -> elevator = elevator;
     res -> nbFloor = nbFloor;
     res -> waitingLists = waitingLists;
+
+    return res;
 }
 
 PersonList* exitElevator(Elevator *e){

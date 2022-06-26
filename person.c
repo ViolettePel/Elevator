@@ -1,7 +1,7 @@
 #include "person.h"
 
 Person* createPerson(int src, int dest){
-    Person* res;
+    Person* res = malloc(sizeof(Person));
     
     res -> src = src;
     res -> dest = dest;
@@ -10,8 +10,10 @@ Person* createPerson(int src, int dest){
 }
 
 PersonList* insert(Person *p,PersonList *list){
-    PersonList* res;
+    PersonList* res = malloc(sizeof(PersonList));
 
     res -> person = p;
     res -> next = list;
+
+    return res;
 }
